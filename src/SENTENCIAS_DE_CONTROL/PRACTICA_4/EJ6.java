@@ -2,6 +2,9 @@ package SENTENCIAS_DE_CONTROL.PRACTICA_4;
 import java.util.*;
 public class EJ6 {
     public static void main(String[] args) {
+
+        //6. Programa que lee una fecha y la valida
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Ingrese una fecha en formato DD/MM/AAAA: ");
