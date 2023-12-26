@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class EJ_7 {
     public static void main(String[] args){
+        //Programa que lee una cadena y un carácter y cuenta el número de veces que aparece dicho carácter en la cadena.
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese la cadena: ");

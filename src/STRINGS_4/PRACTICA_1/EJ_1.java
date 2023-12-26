@@ -4,6 +4,7 @@ import java.util.*;
 
 public class EJ_1 {
     public static void main(String[] args){
+        //Programa que lee cadenas hasta anotar “fin” y las muestra en mayúsculas.
         Scanner sc=new Scanner(System.in);
         String str;
         do {

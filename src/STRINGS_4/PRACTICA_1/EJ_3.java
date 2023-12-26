@@ -4,6 +4,16 @@ import java.util.*;
 
 public class EJ_3 {
     public static void main(String[] args){
+
+        //Programa que lee nombre y primer apellido de personas.
+        // Para cada una de ellas genera un código con la primera letra
+        // del nombre y las tres primeras del apellido.
+        // Si dicho apellido tiene una longitud inferior a 3,
+        // se le pide el segundo apellido y se cogen sus tres primeras letras.
+        // Si éste, también tiene menos longitud
+        // se genera el código con la primera del nombre
+        // y el apellido completo que sea más largo de los dos.
+        // El código se genera en una función.
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese su nombre y apellidos: ");

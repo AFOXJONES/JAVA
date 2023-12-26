@@ -4,7 +4,7 @@ import java.util.*;
 
 public class EJ_4 {
     public static void main(String[] args) {
-
+//Programa que valida un DNI introducido por teclado. Utilizar una función para validarlo
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Introduzca el dni: ");

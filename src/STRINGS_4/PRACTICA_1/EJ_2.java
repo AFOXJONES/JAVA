@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class EJ_2 {
     public static void main(String[] args){
+        //Programa que lee nombres de ciudades europeas y cuenta cuantas
+        // empiezan por una letra introducida por teclado
         Scanner sc=new Scanner(System.in);
         String str;
         int count=0;

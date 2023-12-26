@@ -5,6 +5,7 @@ import java.util.*;
 
 public class EJ_5 {
     public static void main(String[] args){
+        //Programa que lee tres cadenas y las escribe por orden alfabético, ignorando mayúsculas y minúsculas.
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese la primera cadena: ");

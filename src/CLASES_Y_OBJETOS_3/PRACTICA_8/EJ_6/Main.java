@@ -5,7 +5,30 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-
+//En una agencia de viajes se guarda la siguiente información por cada viaje:
+// Ciudad de origen y ciudad de destino, código, número de plazas,
+// importe del viaje por
+//persona. Se pide hacer una clase Viaje que contenga al menos los siguientes
+//métodos:
+//1. Constructor. El código del viaje se forma con las dos primeras letras
+//del origen (en mayúsculas), las dos primeras letras del destino (en
+//mayúsculas) y el número de viaje.
+//2. Método que reserve un número de plazas pasado como parámetro.
+//Si no tiene plazas suficientes no reserva ninguna. Los niños tienen un
+//20% de descuento sobre el valor del billete. Devuelve el importe
+//total de la reserva, 0 si no se puede realizar.
+//3. Método que modifique el número de plazas de un viaje, sólo si es
+//posible, es decir nunca puede haber más reservas que plazas.
+//Retorna si se ha podido realizar o no la modificación.
+//4. Método toString.
+//5. Método que muestre el total recaudado por la agencia.
+//Codificar un main que realice las siguientes operaciones:
+//1. Crear dos viajes.
+//2. Mostrad la información de ambos viajes.
+//3. Reservad varias plazas de ambos viajes.
+//4. Modificad el número de plazas del primer viaje.
+//5. Mostrad de nuevo la información de ambos viajes.
+//6. Mostrad el total recaudado por la agencia.
         Scanner sc= new Scanner(System.in);
         ArrayList<Viaje> viajes=new ArrayList<>();
 

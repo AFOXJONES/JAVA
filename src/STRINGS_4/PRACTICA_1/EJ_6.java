@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class EJ_6 {
     public static void main(String[] args){
+        //Programa que nos dice si una palabra se lee igual del derecho que del revés.
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese la palabra: ");
