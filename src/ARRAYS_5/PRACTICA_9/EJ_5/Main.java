@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args){
         Scanner sc=new Scanner(System.in);
 
-        Vehiculo vehiculos[]=new Vehiculo[5];
+        Vehiculo vehiculos[]=new Vehiculo[2];
 
         for(int i=0; vehiculos.length>i;i++){
             String matricula;
@@ -36,49 +36,60 @@ public class Main {
             Vehiculo miVehiculo = new Vehiculo(matricula, modelo, marca, anioMatriculacion, miCategoria);
             vehiculos[i]=miVehiculo;
         }
-        Vehiculo VehiculoOperando=new Vehiculo();
-        boolean encontrado=false;
+
+        String fin;
         do {
-        System.out.println("Anote la matricula del vehiculo con el que quieras hacer operaciones:");
-        String matricula=sc.nextLine();
+            System.out.println("Pulse cualquier tecla para continuar, o escriba 'fin' para finalizar");
+           fin = sc.nextLine().toUpperCase();
+
+            if (!fin.equals("FIN")) {
+                Vehiculo VehiculoOperando = new Vehiculo();
+                boolean encontrado = false;
+                do {
+                    System.out.println("Anote la matricula del vehiculo con el que quieras hacer operaciones:");
+                    String matricula = sc.nextLine();
 
 
+                    for (Vehiculo v : vehiculos) {
+                        if (v.getMatricula().equals(matricula) && !encontrado) {
+                            VehiculoOperando = v;
+                            encontrado = true;
+                            break;
+                        }
+                    }
+                } while (!encontrado);
 
-            for (Vehiculo v : vehiculos) {
-                if (v.getMatricula().equals(matricula) && !encontrado) {
-                    VehiculoOperando = v;
-                    encontrado=true;
-                    break;
+                System.out.println("QUE DESEA HACER (ANOTE NUMERO)");
+                System.out.println("1.ALQUILAR");
+                System.out.println("2.DEVOLVER");
+                System.out.println("3.MOSTRAR INFORMACION");
+                int opt = sc.nextInt();
+                sc.nextLine();
+
+                switch (opt) {
+                    case 1:
+                        System.out.println("Cuantos dias desea alquilarlo?");
+                        int dias = sc.nextInt();
+                        sc.nextLine();
+                        VehiculoOperando.alquilar(dias, VehiculoOperando);
+                        break;
+                    case 2:
+                        VehiculoOperando.devolverVehiculo(VehiculoOperando);
+                        break;
+                    case 3:
+                        System.out.println(VehiculoOperando.toString());
+                        break;
+                    default:
+                        System.out.println("OPCION NO VALIDA");
+                        break;
                 }
             }
-        }while(!encontrado);
-
-        System.out.println("QUE DESEA HACER (ANOTE NUMERO)");
-        System.out.println("1.ALQUILAR");
-        System.out.println("2.DEVOLVER");
-        System.out.println("3.MOSTRAR INFORMACION");
-        int opt=sc.nextInt();
-        sc.nextLine();
-
-        switch(opt){
-            case 1:
-                System.out.println("Cuantos dias desea alquilarlo?");
-                int dias=sc.nextInt();
-                sc.nextLine();
-                VehiculoOperando.alquilar(dias,VehiculoOperando);
-                break;
-            case 2:
-                VehiculoOperando.devolverVehiculo(VehiculoOperando);
-                break;
-            case 3:
-                System.out.println(VehiculoOperando.toString());
-                break;
-            default:
-                System.out.println("OPCION NO VALIDA");
-                break;
-        }
+        }while(!fin.equals("FIN"));
 
 
+        System.out.println("Vehiculos alquilados: "+Vehiculo.getVehiculosAlquilados());
+
+        System.out.println("Total ganaciaas de la empresa: "+Vehiculo.getGananciasTotales());
 
 
 

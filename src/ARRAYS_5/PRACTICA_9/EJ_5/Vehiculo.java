@@ -31,23 +31,28 @@ public class Vehiculo {
 
     public int alquilar(int dias, Vehiculo v){
         int importe;
-        if(v.getMiCategoria().equals(categoria.UNO)){
-            if(dias<=2){
-                importe=dias*45;
-            }else{
-                importe=dias*30;
+        if(!alquilado) {
+            if (v.getMiCategoria().equals(categoria.UNO)) {
+                if (dias <= 2) {
+                    importe = dias * 45;
+                } else {
+                    importe = dias * 30;
+                }
+            } else {
+                if (dias <= 2) {
+                    importe = dias * 50;
+                } else {
+                    importe = dias * 40;
+                }
             }
-        }else{
-            if(dias<=2){
-                importe=dias*50;
-            }else{
-                importe=dias*40;
-            }
+            vehiculosAlquilados++;
+            ganancias += importe;
+            gananciasTotales += importe;
+            alquilado = true;
+            return importe;
         }
-        vehiculosAlquilados++;
-        ganancias+=importe;
-        gananciasTotales+=importe;
-        return importe;
+        System.out.println("Ya esta alquilado no se puede");
+        return 0;
     }
 
     public void devolverVehiculo(Vehiculo v){
@@ -71,6 +76,10 @@ public class Vehiculo {
                 ", miCategoria=" + miCategoria +
                 ", alquilado=" + alquilado +
                 '}';
+    }
+
+    public static int getGananciasTotales() {
+        return gananciasTotales;
     }
 
     public String getMatricula() {
