@@ -18,6 +18,8 @@ public class EJ_4 {
             nombres[i]=nombre;
         }
 
+        Arrays.stream(nombres).sorted();
+
         System.out.println("introduzca nombre a buscar:");
         String nomBuscar=sc.nextLine();
         boolean encontrado=false;
