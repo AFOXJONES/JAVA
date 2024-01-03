@@ -1,4 +1,5 @@
-package HERENCIA_6.PRACTICA_10;
+package HERENCIA_6.PRACTICA_10.EJ_1;
+
 
 public class LibroDeTexto extends Libro{
     private String curso;

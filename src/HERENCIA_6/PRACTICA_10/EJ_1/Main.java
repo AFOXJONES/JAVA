@@ -1,4 +1,4 @@
-package HERENCIA_6.PRACTICA_10;
+package HERENCIA_6.PRACTICA_10.EJ_1;
 
 import java.util.*;
 
@@ -15,8 +15,8 @@ public class Main {
         Scanner sc=new Scanner(System.in);
 
         Libro[] libros={new LibroDeTexto("Conocimiento del medio","PEPE","MAXI",10.99,"SEGUNDO DE PRIMARIA",10),
-                        new Libro("Viven","Piers Paul Read","MAXI",14.99),
-                        new LibroDeTexto("Git & Github","BraisMoure","programingBook",13,"Programacion y Más",20)};
+                new Libro("Viven","Piers Paul Read","MAXI",14.99),
+                new LibroDeTexto("Git & Github","BraisMoure","programingBook",13,"Programacion y Más",20)};
 
 
         for(Libro libro:libros){
@@ -42,3 +42,4 @@ public class Main {
         }
     }
 }
+
