@@ -22,7 +22,7 @@ public class Main {
 
         Random r=new Random();
 
-        Jugador[] jugadores={new Jugador("Álvaro"),new Jugador("Mara")};
+        Jugador[] jugadores={new Jugador("Álvaro"),new Jugador("Manu")};
 
         boolean ganador=false;
         int numerosSacados=0;
