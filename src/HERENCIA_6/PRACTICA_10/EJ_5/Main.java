@@ -8,5 +8,13 @@ public class Main {
         //dichos métodos. Hacer un main con un array de polígonos para probarl.
 
 
+        Poligono[] poligonos={new Cuadrado(12),new Rectangulo(12,5),new Triangulo(20,30,40,50)};
+
+        for(Poligono poligono:poligonos){
+            poligono.calcularArea();
+            poligono.calcularPerimetro();
+        }
+
+
     }
 }
