@@ -1,35 +1,37 @@
 package EXCEPCIONES_Y_FECHAS_8.PRACTICA_12.FECHAS;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class EJ_3 {
-    public static void main(String[] args){
-        //Programa que lee dos fechas y nos dice cuántos días hay entre ellas.
-
-        Scanner sc=new Scanner(System.in);
-        SimpleDateFormat formato=new SimpleDateFormat("dd/MM/YYYY");
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         try {
-            System.out.println("Ingrese la fecha en formato dd/MM/yyyy:");
-            String inputFecha = sc.nextLine();
+            // Leer la primera fecha
+            System.out.println("Ingrese la primera fecha en formato dd/MM/yyyy:");
+            String inputFecha1 = sc.nextLine();
+            LocalDate fecha1 = LocalDate.parse(inputFecha1, dateFormatter);
 
-            // Parsear la fecha y validar su formato
-            Date fecha1 = formato.parse(inputFecha);
+            // Leer la segunda fecha
+            System.out.println("Ingrese la segunda fecha en formato dd/MM/yyyy:");
+            String inputFecha2 = sc.nextLine();
+            LocalDate fecha2 = LocalDate.parse(inputFecha2, dateFormatter);
 
+            // Calcular la diferencia en días
+            long diasDiferencia = ChronoUnit.DAYS.between(fecha1, fecha2);
 
-            System.out.println("Ingrese la fecha en formato dd/MM/yyyy:");
-            inputFecha = sc.nextLine();
+            // Mostrar el resultado
+            System.out.println("Diferencia en días entre las dos fechas: " + Math.abs(diasDiferencia));
 
-            // Parsear la fecha y validar su formato
-            Date fecha2 = formato.parse(inputFecha);
-
-            int dias=fecha1-fecha2;
-            System.out.println("Dias transcurridos:"+dias);
-        } catch (ParseException e) {
+        } catch (Exception e) {
             System.out.println("Error: Formato de fecha inválido. Inténtelo de nuevo.");
+        } finally {
+            sc.close();
         }
     }
 }
